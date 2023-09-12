@@ -1,0 +1,5 @@
+[engine:junit-jupiter]/[class:com.example.MovieRestAPITest]/[method:shouldGetCatchMeIfYouCaMovie()]
+[engine:junit-jupiter]/[class:com.example.MovieRestAPITest]/[method:shouldGetActorFromClient()]
+[engine:junit-jupiter]/[class:com.example.MovieRestAPITest]/[method:shouldGetLeonardoFromCatchMeIfYouCanMovie()]
+[engine:junit-jupiter]/[class:com.example.MovieRestAPITest]/[method:shouldGetRobertFromTitanicMovie()]
+[engine:junit-jupiter]/[class:com.example.MovieRestAPITest]/[method:shouldGetHeatMovie()]

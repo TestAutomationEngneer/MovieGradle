@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.MovieContractVerificationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-09-12T09:38:01" hostname="LAPTOP-Q72HNK38" time="1.296">
+  <properties/>
+  <testcase name="shouldGetProperActorBasedOnMicronautClient()" classname="com.example.MovieContractVerificationTest" time="1.048"/>
+  <testcase name="shouldGetProperActorBasedOnMockServer(MockServer)" classname="com.example.MovieContractVerificationTest" time="0.247"/>
+  <system-out><![CDATA[11:38:00.184 [Test worker] INFO  i.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment - Established active environments: [test, pact]
+11:38:00.386 [Test worker] INFO  i.m.s.ObjectMappers$ObjectMapperContext$1 - Established active environments: [test]
+11:38:01.111 [Test worker] INFO  c.example.repository.MovieRepository - Movies library loaded successfully!
+11:38:02.382 [Test worker] INFO  c.e.MovieContractVerificationTest - Pact test shouldGetProperActorBasedOnMicronautClient passed
+11:38:02.387 [Thread-4] WARN  a.com.dius.pact.core.support.Metrics - 
+            Please note: we are tracking events anonymously to gather important usage statistics like JVM version
+            and operating system. To disable tracking, set the 'pact_do_not_track' system property or environment
+            variable to 'true'.
+            
+11:38:02.646 [Test worker] INFO  c.e.MovieContractVerificationTest - Pact test shouldGetProperActorBasedOnMockServer passed
+11:38:02.780 [Test worker] INFO  a.c.d.p.c.j.PactConsumerTestExt$Companion - Writing pacts out to default directory
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
