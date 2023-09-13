@@ -6,7 +6,7 @@ micronaut:
   http:
     services:
       actor:
-        url: http://localhost:9292
+        url: http://localhost:9494
     client:
       read-timeout: 5s
 

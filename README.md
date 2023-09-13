@@ -1,4 +1,4 @@
-Movie Service has dependency wirh Actor service
+Movie Service has dependency with Actor service
 
 Prerequisits:
 
@@ -39,3 +39,10 @@ Expected results from GET Movie , id = 1
 }
 ]
 }
+
+PACT
+source: https://blog.zephyrok.com/contract-testing-using-pact-with-java/
+Pact broker: http://localhost:9292
+
+1. gradle tast - pactPublish
+2. new pair - consumer - provider is visible in pactBroker. 

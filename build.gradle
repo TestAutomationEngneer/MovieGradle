@@ -66,6 +66,8 @@ pact{
         pactBrokerUrl = 'http://localhost:9292/'
 //        tags = 'pact'
         consumerVersion = 1.0
+        pactBrokerUsername = 'user'
+        pactBrokerPassword = 'password'
     }
 }
 
