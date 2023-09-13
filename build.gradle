@@ -7,7 +7,7 @@ plugins {
 
 }
 
-version = "0.1"
+version = "2.0"
 group = "com.example"
 
 repositories {
@@ -65,7 +65,7 @@ pact{
         pactDirectory = "$buildDir/pacts"
         pactBrokerUrl = 'http://localhost:9292/'
 //        tags = 'pact'
-        consumerVersion = 1.0
+        consumerVersion = 2.0
         pactBrokerUsername = 'user'
         pactBrokerPassword = 'password'
     }
@@ -80,8 +80,8 @@ task testContract(type: Test){
     ignoreFailures = true
     systemProperty "pactbroker.host", "http://localhost:9292/"
     systemProperty "pactbroker.port", "80"
-    systemProperty "pactbroker.consumerversionselectors.tags", 1.0
-    systemProperty "pact.provider.version", 1.0
+    systemProperty "pactbroker.consumerversionselectors.tags", 2.0
+   // systemProperty "pact.provider.version", 1.0
     systemProperty "pact.provider.tag", "movie_branch"
     systemProperty "pact.verifier.publishTesults", "movie_results"
 }
