@@ -6,6 +6,7 @@ import com.example.service.MovieService;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.*;
 
+import jakarta.validation.Valid;
 import java.util.List;
 
 @Controller("/movies")
@@ -29,7 +30,7 @@ public class MovieGradleController {
 
     @Post("/")
     @Status(HttpStatus.CREATED)
-    public Movie create(@Body Movie movie) {
+    public Movie create(@Body @Valid Movie movie) {
         return movieService.saveMovie(movie);
     }
 

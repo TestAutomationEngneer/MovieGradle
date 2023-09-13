@@ -7,11 +7,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
 
 
-@Introspected
+//@Introspected
 @Serdeable.Serializable
 @Serdeable.Deserializable
 @Data
