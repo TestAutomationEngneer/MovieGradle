@@ -29,7 +29,10 @@ dependencies {
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-hibernate-jpa")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut:micronaut-validation:3.9.3")
+    implementation("io.micronaut:micronaut-runtime:3.9.3")
     implementation("io.swagger.core.v3:swagger-annotations")
+    implementation("javax.validation:validation-api:2.0.1.Final")
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
@@ -54,11 +57,11 @@ dependencies {
 }
 pact{
     broker{
-        pactBrokerUrl = 'http://'
+        pactBrokerUrl = 'http://localhost:9292/'
     }
     publish{
         pactDirectory = "$buildDir/pacts"
-        pactBrokerUrl = 'http://'
+        pactBrokerUrl = 'http://localhost:9292/'
 //        tags = 'pact'
         consumerVersion = 1.0
     }
@@ -71,7 +74,7 @@ task testContract(type: Test){
         includeTags 'pact'
     }
     ignoreFailures = true
-    systemProperty "pactbroker.host", "http://"
+    systemProperty "pactbroker.host", "http://localhost:9292/"
     systemProperty "pactbroker.port", "80"
     systemProperty "pactbroker.consumerversionselectors.tags", 1.0
     systemProperty "pact.provider.version", 1.0
@@ -95,9 +98,6 @@ java {
     targetCompatibility = JavaVersion.toVersion("17")
 }
 
-test{
-    useJUnitPlatform()
-}
 
 graalvmNative.toolchainDetection = false
 micronaut {

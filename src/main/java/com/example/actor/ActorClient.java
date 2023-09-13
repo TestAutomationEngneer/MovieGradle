@@ -4,6 +4,7 @@ import com.example.model.Actor;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.PathVariable;
 import io.micronaut.http.client.annotation.Client;
+import io.micronaut.retry.annotation.Retryable;
 
 import java.util.List;
 
@@ -13,11 +14,11 @@ public interface ActorClient {
 
 
     @Get("/actors/{id}")
-    //@Retryable
+    @Retryable
     Actor getActorById(@PathVariable Long id);
 
     @Get("/actors")
-    //@Retryable
+    @Retryable
     List<Actor> getAllActors();
 }
 
