@@ -46,6 +46,7 @@ public class MovieRestAPITest extends TestBase {
     void shouldGetActorFromClient() {
         Actor actualActor = actorClient.getActorById(2L);
         assertThat(actualActor.getFirstName()).isEqualTo("Robercik");
+        log.info("Test shouldGetActorFromClient - PASS");
     }
 
     @Test
@@ -57,6 +58,7 @@ public class MovieRestAPITest extends TestBase {
                 .statusCode(200).log().all()
                 .body("title", equalTo("Catch Me If You Can"))
                 .body("actors", hasSize(2));
+        log.info("Test shouldGetCatchMeIfYouCaMovie - PASS");
     }
 
     @Test
@@ -69,6 +71,7 @@ public class MovieRestAPITest extends TestBase {
                 .body("title", equalTo("Catch Me If You Can"))
                 .body("actors", hasSize(2))
                 .body("actors[0].firstName", equalTo("Leonardo"));
+        log.info("Test shouldGetLeonardoFromCatchMeIfYouCanMovie - PASS");
     }
 
     @Test
@@ -80,6 +83,7 @@ public class MovieRestAPITest extends TestBase {
                 .statusCode(200).log().all()
                 .body("title", equalTo("Heat"))
                 .body("actors", hasSize(1));
+        log.info("Test shouldGetHeatMovie - PASS");
     }
 
     @Test
@@ -92,6 +96,7 @@ public class MovieRestAPITest extends TestBase {
                 .body("title", equalTo("Heat"))
                 .body("actors", hasSize(1))
                 .body("actors[0].firstName", equalTo("Robercik"));  //z  @MockBean(ActorClient.class) w TestBase
+        log.info("Test shouldGetRobertFromTitanicMovie - PASS");
     }
 
     @Test
@@ -109,6 +114,7 @@ public class MovieRestAPITest extends TestBase {
         var messages = (Map<String, Object>) responseMap.get("_embedded");
         var errors = (List<Map<String, String>>) messages.get("errors");
         var errorMessage = errors.get(0);
+        log.info("Test shouldNOTSaveMovieWithoutTitle - PASS");
         assertThat(errors.get(0))
                 .containsEntry("message", "movie.title: can not be null my friend");
     }
