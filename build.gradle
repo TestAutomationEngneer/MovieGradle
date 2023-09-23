@@ -64,10 +64,10 @@ pact{
     publish{
         pactDirectory = "$buildDir/pacts"
         pactBrokerUrl = 'http://localhost:9292/'
-//        tags = 'pact'
-        consumerVersion = 2.0
+        consumerVersion = 8.0
         pactBrokerUsername = 'user'
         pactBrokerPassword = 'password'
+        tags = ['ooo']
     }
 }
 
@@ -79,11 +79,8 @@ task testContract(type: Test){
     }
     ignoreFailures = true
     systemProperty "pactbroker.host", "http://localhost:9292/"
-    systemProperty "pactbroker.port", "80"
-    systemProperty "pactbroker.consumerversionselectors.tags", 2.0
-   // systemProperty "pact.provider.version", 1.0
-    systemProperty "pact.provider.tag", "movie_branch"
-    systemProperty "pact.verifier.publishTesults", "movie_results"
+    //systemProperty "pact.consumer.tag", "movie_tag"
+    systemProperty 'pact.verifier.publishResults', 'true'
 }
 
 test{
