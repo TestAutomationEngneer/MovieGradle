@@ -7,7 +7,7 @@ plugins {
 
 }
 
-version = "2.0"
+version = "112.00"
 group = "com.example"
 
 repositories {
@@ -64,7 +64,7 @@ pact{
     publish{
         pactDirectory = "$buildDir/pacts"
         pactBrokerUrl = 'http://localhost:9292/'
-        consumerVersion = 8.0  //version of consumer on pactBroker
+        consumerVersion = project.version  //version of consumer on pactBroker
         pactBrokerUsername = 'user'
         pactBrokerPassword = 'password'
         tags = ['ooo']
